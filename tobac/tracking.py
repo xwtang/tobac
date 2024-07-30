@@ -386,9 +386,9 @@ def linking_trackpy(
             adaptive_step=adaptive_step,
             adaptive_stop=adaptive_stop,
             dist_func=dist_func,
-            #                                 copy_features=False, diagnostics=False,
-            #                                 hash_size=None, box_size=None, verify_integrity=True,
-            #                                 retain_index=False
+            # copy_features=False, diagnostics=False,
+            # hash_size=None, box_size=None, verify_integrity=True,
+            # retain_index=False
         )
         # recreate a single dataframe from the list
 
@@ -434,6 +434,7 @@ def linking_trackpy(
     ):
         cell = int(i_particle + cell_number_start)
         particle_num_to_cell_num[particle] = int(cell)
+        
     remap_particle_to_cell_vec = np.vectorize(remap_particle_to_cell_nv)
     trajectories_unfiltered["cell"] = remap_particle_to_cell_vec(
         particle_num_to_cell_num, trajectories_unfiltered["particle"]

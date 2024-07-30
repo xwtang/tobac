@@ -251,7 +251,8 @@ def find_hdim_axes_3D(
     if type(field_in) is iris.cube.Cube:
         return iris_utils.find_hdim_axes_3d(field_in, vertical_coord, vertical_axis)
     elif type(field_in) is xr.DataArray:
-        raise NotImplementedError("Xarray find_hdim_axes_3D not implemented")
+        return field_in.dims.index('y'), field_in.dims.index('x')
+        # raise NotImplementedError("Xarray find_hdim_axes_3D not implemented")
     else:
         raise ValueError("Unknown data type: " + type(field_in).__name__)
 

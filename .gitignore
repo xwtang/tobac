@@ -5,8 +5,9 @@ htmlcov
 .coverage
 build
 .idea
-examples/*/Save
-examples/*/Plot
+examples/
+notebook/
+examples/
 examples/climate-processes-tobac_example_data-b3e69ee
 .ipynb_checkpoints
 .DS_Store
